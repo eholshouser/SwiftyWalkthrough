@@ -11,19 +11,7 @@
 		B35F8CBB1C7DE9620016E6D6 /* UIViewController+Walkthrough.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F8CB61C7DE9620016E6D6 /* UIViewController+Walkthrough.swift */; };
 		B35F8CBC1C7DE9620016E6D6 /* ViewDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F8CB71C7DE9620016E6D6 /* ViewDescriptor.swift */; };
 		B35F8CBD1C7DE9620016E6D6 /* WalkthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F8CB81C7DE9620016E6D6 /* WalkthroughView.swift */; };
-		B3D23C901BB99B3100A13396 /* SwiftyWalkthrough.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D23C851BB99B3100A13396 /* SwiftyWalkthrough.framework */; };
-		B3D23C951BB99B3100A13396 /* SwiftyWalkthroughTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D23C941BB99B3100A13396 /* SwiftyWalkthroughTests.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		B3D23C911BB99B3100A13396 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B3D23C7C1BB99B3100A13396 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B3D23C841BB99B3100A13396;
-			remoteInfo = SwiftyWalkthrough;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		B35F8CB51C7DE9620016E6D6 /* SwiftyWalkthrough.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyWalkthrough.h; sourceTree = "<group>"; };
@@ -32,7 +20,6 @@
 		B35F8CB81C7DE9620016E6D6 /* WalkthroughView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughView.swift; sourceTree = "<group>"; };
 		B394A1AF1CF08A7B00ABAC68 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3D23C851BB99B3100A13396 /* SwiftyWalkthrough.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyWalkthrough.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3D23C8F1BB99B3100A13396 /* SwiftyWalkthroughTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyWalkthroughTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D23C941BB99B3100A13396 /* SwiftyWalkthroughTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyWalkthroughTests.swift; sourceTree = "<group>"; };
 		B3D23C961BB99B3100A13396 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3F4E9CF1C7D2DC3000506A9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -43,14 +30,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B3D23C8C1BB99B3100A13396 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B3D23C901BB99B3100A13396 /* SwiftyWalkthrough.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				B3D23C851BB99B3100A13396 /* SwiftyWalkthrough.framework */,
-				B3D23C8F1BB99B3100A13396 /* SwiftyWalkthroughTests.xctest */,
 			);
 			name = Products;
 			path = ..;
@@ -130,24 +108,6 @@
 			productReference = B3D23C851BB99B3100A13396 /* SwiftyWalkthrough.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B3D23C8E1BB99B3100A13396 /* SwiftyWalkthroughTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B3D23C9C1BB99B3100A13396 /* Build configuration list for PBXNativeTarget "SwiftyWalkthroughTests" */;
-			buildPhases = (
-				B3D23C8B1BB99B3100A13396 /* Sources */,
-				B3D23C8C1BB99B3100A13396 /* Frameworks */,
-				B3D23C8D1BB99B3100A13396 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B3D23C921BB99B3100A13396 /* PBXTargetDependency */,
-			);
-			name = SwiftyWalkthroughTests;
-			productName = SwiftyWalkthroughTests;
-			productReference = B3D23C8F1BB99B3100A13396 /* SwiftyWalkthroughTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -160,10 +120,7 @@
 				TargetAttributes = {
 					B3D23C841BB99B3100A13396 = {
 						CreatedOnToolsVersion = 7.0;
-						LastSwiftMigration = 0800;
-					};
-					B3D23C8E1BB99B3100A13396 = {
-						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -180,20 +137,12 @@
 			projectRoot = "";
 			targets = (
 				B3D23C841BB99B3100A13396 /* SwiftyWalkthrough */,
-				B3D23C8E1BB99B3100A13396 /* SwiftyWalkthroughTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B3D23C831BB99B3100A13396 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B3D23C8D1BB99B3100A13396 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -213,23 +162,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B3D23C8B1BB99B3100A13396 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B3D23C951BB99B3100A13396 /* SwiftyWalkthroughTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B3D23C921BB99B3100A13396 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B3D23C841BB99B3100A13396 /* SwiftyWalkthrough */;
-			targetProxy = B3D23C911BB99B3100A13396 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B3D23C971BB99B3100A13396 /* Debug */ = {
@@ -339,7 +272,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -358,27 +291,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pt.ruicosta.SwiftyWalkthrough;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
-		B3D23C9D1BB99B3100A13396 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = SwiftyWalkthroughTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = pt.ruicosta.SwiftyWalkthroughTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		B3D23C9E1BB99B3100A13396 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = SwiftyWalkthroughTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = pt.ruicosta.SwiftyWalkthroughTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -399,15 +312,6 @@
 			buildConfigurations = (
 				B3D23C9A1BB99B3100A13396 /* Debug */,
 				B3D23C9B1BB99B3100A13396 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B3D23C9C1BB99B3100A13396 /* Build configuration list for PBXNativeTarget "SwiftyWalkthroughTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B3D23C9D1BB99B3100A13396 /* Debug */,
-				B3D23C9E1BB99B3100A13396 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

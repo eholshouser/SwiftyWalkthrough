@@ -16,9 +16,9 @@ private let defaultDimColor = UIColor.black.withAlphaComponent(0.7).cgColor
 
 @objc open class WalkthroughView: UIView {
     
-    open var availableViews: [ViewDescriptor] = []
+    @objc open var availableViews: [ViewDescriptor] = []
     
-    open var dimColor: CGColor = defaultDimColor {
+    @objc open var dimColor: CGColor = defaultDimColor {
         didSet {
             setNeedsDisplay()
         }
@@ -44,7 +44,7 @@ private let defaultDimColor = UIColor.black.withAlphaComponent(0.7).cgColor
     
     override open func draw(_ rect: CGRect) {
         super.draw(rect)
-        superview?.bringSubview(toFront: self)
+        superview?.bringSubviewToFront(self)
         
         removeOverlaySublayers()
         
@@ -64,7 +64,7 @@ private let defaultDimColor = UIColor.black.withAlphaComponent(0.7).cgColor
         
         let fillLayer = CAShapeLayer()
         fillLayer.path = overlayPath.cgPath
-        fillLayer.fillRule = kCAFillRuleEvenOdd
+        fillLayer.fillRule = CAShapeLayerFillRule.evenOdd
         fillLayer.fillColor = dimColor
         
         overlayView.layer.addSublayer(fillLayer)
@@ -100,8 +100,8 @@ private let defaultDimColor = UIColor.black.withAlphaComponent(0.7).cgColor
     func setupConstraints() {
         let views = ["overlayView": overlayView]
         
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[overlayView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[overlayView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: views))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[overlayView]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: views))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[overlayView]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: views))
     }
     
     func makeOverlay() -> UIView {
@@ -113,12 +113,12 @@ private let defaultDimColor = UIColor.black.withAlphaComponent(0.7).cgColor
     
     func registerForOrientationChanges() {
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()
-        NotificationCenter.default.addObserver(self, selector: #selector(WalkthroughView.orientationChanged), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(WalkthroughView.orientationChanged), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     func unregisterFromOrientationChanges() {
         UIDevice.current.endGeneratingDeviceOrientationNotifications()
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     @objc func orientationChanged() {
@@ -131,17 +131,17 @@ private let defaultDimColor = UIColor.black.withAlphaComponent(0.7).cgColor
         overlaySublayers.forEach { $0.removeFromSuperlayer() }
     }
     
-    open func cutHolesForViews(_ views: [UIView]) {
+    @objc open func cutHolesForViews(_ views: [UIView]) {
         let descriptors = views.map(ViewDescriptor.init)
         cutHolesForViewDescriptors(descriptors)
     }
     
-    open func cutHolesForViewDescriptors(_ views: [ViewDescriptor]) {
+    @objc open func cutHolesForViewDescriptors(_ views: [ViewDescriptor]) {
         availableViews = views
         setNeedsDisplay()
     }
     
-    open func removeAllHoles() {
+    @objc open func removeAllHoles() {
         cutHolesForViewDescriptors([])
     }
     

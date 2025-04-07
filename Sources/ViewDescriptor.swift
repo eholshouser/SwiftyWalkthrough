@@ -15,7 +15,7 @@ import Foundation
     let extraPaddingY: CGFloat
     let cornerRadius: CGFloat
     
-    public init(view: UIView, extraPaddingX: CGFloat, extraPaddingY: CGFloat, cornerRadius: CGFloat) {
+    @objc public init(view: UIView, extraPaddingX: CGFloat, extraPaddingY: CGFloat, cornerRadius: CGFloat) {
         self.view = view
         self.extraPaddingX = extraPaddingX
         self.extraPaddingY = extraPaddingY
